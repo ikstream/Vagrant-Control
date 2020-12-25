@@ -3,7 +3,7 @@ Description= Resume or suspend Vagrant Boxes on system up/down
 After=network-online.target
 
 [Service]
-WorkingDirectory=/home/ikstream
+WorkingDirectory=/home/<vagrant user>
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/sh /usr/local/bin/resume_vagrant <vagrant user>
