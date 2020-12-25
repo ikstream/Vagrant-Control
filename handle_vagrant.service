@@ -1,0 +1,17 @@
+[Unit]
+Description= Resume or suspend Vagrant Boxes on system up/down
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/ikstream
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/sh /usr/local/bin/resume_vagrant <vagrant user>
+ExecStop=/usr/bin/sh /usr/local/bin/suspend_vagrant <vagrant user>
+TimeoutStartSec=0
+TimeoutStopSec=infinity
+
+[Install]
+WantedBy=multi-user.target
+
+
